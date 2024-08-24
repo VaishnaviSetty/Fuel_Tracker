@@ -2,7 +2,7 @@
 
 import json
 
-def load_config(file_path='C:/Users/vaishtir/Fuel Scraping/config.json'):
+def load_config(file_path='C:/Users/Administrator/Desktop/Fuel Scraping/config.json'):
     """
     Load configuration settings from a JSON file.
     """
