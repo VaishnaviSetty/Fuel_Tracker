@@ -3,8 +3,6 @@ import os
 from datetime import datetime
 import pandas as pd
 import requests
-import schedule
-import time
 from config import get as config_get
 from logger import logger
 
@@ -66,15 +64,15 @@ def fetch_and_save_fuel_prices():
         logger.info(f"Data directory {data_dir} doesn't exist. Creating")
         os.makedirs(data_dir)
 
-    file_name = get_daily_file_path()
+    file_name = get_file_path()  # Use updated function to get file path
 
     try:
         new_data = get_fuel_data()
-        
+       
         if new_data.empty:
             logger.info("No new data fetched.")
             return
-        
+       
         # If the file exists, load it and append the new data
         if os.path.exists(file_name):
             existing_data = pd.read_excel(file_name)
@@ -83,7 +81,7 @@ def fetch_and_save_fuel_prices():
             combined_data = combined_data.drop_duplicates(subset=['City Name', 'Date'], keep='last')
         else:
             combined_data = new_data
-        
+       
         # Save updated data to file
         combined_data.to_excel(file_name, index=False)
         logger.info(f"File saved as: {file_name}")
@@ -91,21 +89,16 @@ def fetch_and_save_fuel_prices():
     except Exception as e:
         logger.exception(f"Something went wrong. Error: {e}")
 
-def get_daily_file_path():
-    today = datetime.now().strftime('%Y-%m-%d')
-    return os.path.join(config_get("DATA_DIR"), f"daily_fuel_prices_{today}.xlsx")
-
-def job():
-    logger.info("Job started")
-    fetch_and_save_fuel_prices()
-    logger.info("Job completed")
-
-# Schedule the job every day at midnight
-schedule.every().day.at("00:00").do(job)
+def get_file_path():
+    return os.path.join(config_get("DATA_DIR"), "latest-fuel-prices.xlsx")
 
 if __name__ == "__main__":
     print("Script started")
-    job()  # Run job immediately for testing
-    while True:
-        schedule.run_pending()
-        time.sleep(60)  # Wait a minute before checking again
+    fetch_and_save_fuel_prices()  # Run the function immediately for testing
+
+
+    
+   
+
+
+    
