@@ -1,0 +1,23 @@
+2024-08-22 13:42:43,449 - fuel_price_tracker - INFO - Job started
+2024-08-22 13:42:43,449 - fuel_price_tracker - INFO - Getting data for the following cities: ['New Delhi', 'Hyderabad', 'Kolkata', 'Chennai', 'Mumbai', 'Bangalore']
+2024-08-22 13:42:43,449 - fuel_price_tracker - INFO - Trying to fetch data for city: New Delhi
+2024-08-22 13:42:43,791 - fuel_price_tracker - INFO - Response code: 200
+2024-08-22 13:42:43,896 - fuel_price_tracker - INFO - Got data for New Delhi. Records: 362
+2024-08-22 13:42:43,896 - fuel_price_tracker - INFO - Trying to fetch data for city: Hyderabad
+2024-08-22 13:42:44,119 - fuel_price_tracker - INFO - Response code: 200
+2024-08-22 13:42:44,119 - fuel_price_tracker - INFO - Got data for Hyderabad. Records: 363
+2024-08-22 13:42:44,134 - fuel_price_tracker - INFO - Trying to fetch data for city: Kolkata
+2024-08-22 13:42:44,342 - fuel_price_tracker - INFO - Response code: 200
+2024-08-22 13:42:44,358 - fuel_price_tracker - INFO - Got data for Kolkata. Records: 342
+2024-08-22 13:42:44,358 - fuel_price_tracker - INFO - Trying to fetch data for city: Chennai
+2024-08-22 13:42:44,573 - fuel_price_tracker - INFO - Response code: 200
+2024-08-22 13:42:44,581 - fuel_price_tracker - INFO - Got data for Chennai. Records: 366
+2024-08-22 13:42:44,581 - fuel_price_tracker - INFO - Trying to fetch data for city: Mumbai
+2024-08-22 13:42:44,823 - fuel_price_tracker - INFO - Response code: 200
+2024-08-22 13:42:44,837 - fuel_price_tracker - INFO - Got data for Mumbai. Records: 363
+2024-08-22 13:42:44,837 - fuel_price_tracker - INFO - Trying to fetch data for city: Bangalore
+2024-08-22 13:42:45,043 - fuel_price_tracker - INFO - Response code: 200
+2024-08-22 13:42:45,075 - fuel_price_tracker - INFO - Got data for Bangalore. Records: 362
+2024-08-22 13:42:45,109 - fuel_price_tracker - INFO - Fetched and sorted data for all cities
+2024-08-22 13:42:46,807 - fuel_price_tracker - INFO - File saved as: C:/Users/Administrator/Desktop/static\daily_fuel_prices_2024-08-22.xlsx
+2024-08-22 13:42:46,807 - fuel_price_tracker - INFO - Job completed
